@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<!-- The navbar -->
+<div class = "ui fixed inverted menu">
+    <div class = "ui container">
+        <div class = "header item"><i class = "code icon"></i>Alok's Bank</div>
+        <a href = "/" class = "item">Home</a>
+        <div class = "right menu">
+            <a href = "/" class = "item">logout</a>
+        </div>
+    </div>
+</div>
+
+<h1>Welcome to aloksBank</h1>
+<div><a href = "/home/transfer/<%= id %>" >money transfer</a></div>
+<div><a href = "/home/balanceenquery/<%= id %>">Balance enquery</a></div>
+<div><a href = "/home/<%= id %>/ministatement">Mini statement</a></div>
+<%- include("partials/footer.ejs") %>

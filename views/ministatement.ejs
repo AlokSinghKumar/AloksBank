@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+<!-- The navbar -->
+<div class = "ui fixed inverted menu">
+   <div class = "ui container">
+       <div class = "header item"><i class = "code icon"></i>Alok's Bank</div>
+       <a href = "/home/<%= transaction._id %>" class = "item">Home</a>
+       <a href = "/home/balanceenquery/<%= transaction._id %>" class = "item">Balance</a>
+       <a href = "/home/transfer/<%= transaction._id %>" class = "item">money transfer</a>
+       <div class = "right menu">
+           <a href = "/" class = "item">logout</a>
+       </div>
+   </div>
+</div>
+
+<div class = "ui text container">
+   <div class = "ui main text container segment">
+      <h2 class = "ui center aligned header">Ministatement</h2>
+   </div>
+   <h2 class = "ui center aligned header"><%= transaction.username %>'s Ministatement</h2>
+   <div class = "attached ui segment">
+         <% transaction.transactions.forEach((transaction) => { %>
+            <div class = "attached ui segment">
+               <div>Amount: <%= transaction.amount %></div> 
+               <div>date: <%= transaction.dateandtime %></div> 
+               <div>balance: <%= transaction.after_transection_balance %></div>
+               <% if(transaction.type == true){ %>
+                     <div>Type: Credit</div>
+               <%} else {%>
+                  <div>Type: Debit</div>
+               <% } %>
+            </div> 
+        <% }) %>  
+   </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

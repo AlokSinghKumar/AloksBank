@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") %>
+<!-- The navbar -->
+<div class = "ui fixed inverted menu">
+    <div class = "ui container">
+        <div class = "header item"><i class = "code icon"></i>Alok's Bank</div>
+        <a href = "/" class = "item">Home</a>
+        <div class = "right menu">
+            <a href = "/login" class = "item">login</a>
+        </div>
+    </div>
+</div>
+
+<h1>Signup</h1>
+<div class = "ui container">
+    <form action = "/signup" method = "POST" class = "ui form">
+        <h4 class = "ui dividing header">Enter details carefuly</h4>
+        <div class = "field">
+            <label>Account Number</label>
+            <div class = "field">
+                <input class="form-control" type = "text" placeholder = "Account number" name = "customer[account_no]" required>
+            </div>
+            <label>Branch code</label>
+            <div class = "field">
+                <input class="form-control" type = "text" name = customer[branch_code] placeholder = "Branch code">
+            </div>
+            <label>IFSCI code</label>
+            <div class = "field">
+                <input class="form-control" type = "text" name = customer[ifsci] placeholder = "Branch code">
+            </div>
+            <label>username</label>
+            <div class = "field">
+                <input class="form-control" type = "text" placeholder = "username" name = "customer[username]" required>
+            </div>
+            <label>password</label>
+            <div class = "field">
+                <input class="form-control" type = "password" placeholder = "password" name ="customer[password]" required>
+            </div>
+        </div>
+        <div class = "text-center">
+            <button class = "ui primary button" type = "submit">Signup</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- <form action = "/signup" method = "POST">
+    <div>
+        <label>Account number</label>
+        <input type = "text" placeholder = "Account number" name = "customer[account_no]" required>
+    </div>
+    <div>
+        <label>Branch code</label>
+        <input type = "text" name = customer[branch_code] placeholder = "Branch code">
+    </div>
+    <div>
+        <label>IFSCI code</label>
+        <input type = "text" name = customer[ifsci] placeholder = "Branch code">
+    </div>
+    <div>
+        <label>username</label>
+        <input type = "text" placeholder = "username" name = "customer[username]" required>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type = "password" placeholder = "password" name ="customer[password]" required>
+    </div>
+    <div>
+        <input type = "submit" placeholder = "submit">
+    </div>
+</form> -->
+
+<%- include("partials/footer.ejs") %>

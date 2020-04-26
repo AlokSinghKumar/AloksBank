@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+<!-- The navbar -->
+<div class = "ui fixed inverted menu">
+    <div class = "ui container">
+        <div class = "header item"><i class = "code icon"></i>Alok's Bank</div>
+        <a href = "/" class = "item">Home</a>
+        <a href = "/home/balanceenquery/<%= customer %>" class = "item">Balance</a>
+        <a href = "/home/<%= customer %>/ministatement" class = "item">Mini statement</a>
+        <div class = "right menu">
+            <a href = "/" class = "item">logout</a>
+        </div>
+    </div>
+</div>
+
+<div class = "ui container">
+    <div class = "ui main text container segment">
+        <h2 class = "ui center aligned header">Money Transfer</h2>
+     </div>
+     <h2 class = "ui center aligned header">Money Transfer</h2>
+    <form action = "/home/transfer/<%= customer %>" method = "POST" class = "ui form">
+        <h4 class = "ui dividing header">Enter details carefuly</h4>
+        <div class = "field">
+            <div class = "field">
+                <label>Account number</label>
+                <input type = "text" placeholder = "Account number" name = "transfer[account_no]" required>
+            </div>
+            <div class = "field">
+                <label>IFSCI code</label>
+                <input type = "text" placeholder = "IFSCI code" name = "transfer[ifsci]" required>
+            </div>
+            <div class = "field">
+                <label>Amount</label>
+                <input type = "number" placeholder = "Amount to transfer" name = "transfer[amount]" required>
+            </div>
+            <div class = "text-center">
+                <button class = "ui primary button" type = "submit">Transfer</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %>
